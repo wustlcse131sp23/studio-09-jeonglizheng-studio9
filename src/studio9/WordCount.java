@@ -1,8 +1,10 @@
 package studio9;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import support.cse131.NotYetImplementedException;
 
@@ -30,7 +32,36 @@ public class WordCount {
 	public static Map<String, Integer> countWords(List<String> words) {
 
 		// FIXME
-		throw new NotYetImplementedException();
+		Map<String, Integer> numOfWords = new HashMap<>();
+		
+		for (String word : words) {
+			if (numOfWords.containsKey(word)) {
+				numOfWords.put(word, numOfWords.get(word) + 1);
+			}
+			else {
+				numOfWords.put(word, 1);
+			}
+		}
+		
+		return numOfWords;
+		
+//		Set<String> keySet = new HashSet<>();
+//		
+//		for (String word : words) {
+//			keySet.add(word);
+//		}
+//		
+//		int num = 0;
+//		
+//		for (String key : keySet) {
+//			for (String word : words) {
+//				if (key.equals(word)) {
+//					num +=1;
+//				}
+//			}
+//			numOfWords.put(key, num);
+//			num = 0;
+//		}
 
 	}
 }
